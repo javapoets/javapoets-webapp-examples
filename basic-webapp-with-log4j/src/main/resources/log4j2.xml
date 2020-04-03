@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+  <Properties>
+    <Property name="LOG_DIR">/var/log/web/</Property>
+  </Properties>
+
+  <Appenders>
+
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d %-5p [%t] %C{2}:%L - %m%n" />
+    </Console>
+
+    <RollingFile
+      name="rollingFile"
+      fileName="${LOG_DIR}/localhost-8080.log"
+      filePattern="${LOG_DIR}/localhost-8080.%i.log.gz"
+      ignoreExceptions="false">
+      <PatternLayout>
+        <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p:%L %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="10MB" />
+      </Policies>
+      <DefaultRolloverStrategy max="100" />
+    </RollingFile>
+
+  </Appenders>
+
+  <Loggers>
+    <Logger name="javapoets." level="trace">
+      <AppenderRef ref="rollingFile" />
+    </Logger>
+    <Root level="debug">
+      <AppenderRef ref="STDOUT" />
+    </Root>
+  </Loggers>
+
+</Configuration>

@@ -4,22 +4,19 @@ Basic Java Web Application
 ## Gradle Config
 
 ```groovy
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.akhikhl.gretty:gretty:+'
-    }
+plugins {
+     id 'java'
+     id 'war'
+     id 'org.gretty' version '3.0.2'
 }
 
 repositories {
     jcenter()
 }
 
-apply plugin: 'java'
-apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+dependencies {
+    implementation 'org.gretty:gretty:3.0.2'
+}
 ```
 
 ## File: gradle.properties

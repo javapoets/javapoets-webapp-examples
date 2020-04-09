@@ -4,27 +4,20 @@ Basic Java Web Application with Log4j
 ## Gradle Config
 
 ```groovy
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.akhikhl.gretty:gretty:+'
-    }
+plugins {
+     id 'java'
+     id 'war'
+     id 'org.gretty' version '3.0.2'
 }
 
 repositories {
-    jcenter()
+     jcenter()
 }
 
-apply plugin: 'java'
-apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
-
 dependencies {
-    compile "javax.servlet:javax.servlet-api:${project.property('servlet.version')}"
-    compile "org.apache.logging.log4j:log4j-core:${project.property('log4j.version')}"
-    compile "org.apache.logging.log4j:log4j-api:${project.property('log4j.version')}"
+    implementation 'org.gretty:gretty:3.0.2'
+    implementation "org.apache.logging.log4j:log4j-core:${ project.property('log4j.version') }"
+    implementation "org.apache.logging.log4j:log4j-api:${ project.property('log4j.version') }"
 }
 
 gretty {

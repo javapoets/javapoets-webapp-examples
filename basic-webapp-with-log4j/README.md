@@ -1,4 +1,5 @@
 Basic Java Web Application with Log4j
+Basic Java Web Application with Gradle, Gretty and Log4j
 =====================================
 
 ## Gradle Config
@@ -9,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.akhikhl.gretty:gretty:+'
+        classpath 'org.gretty:gretty:+'
     }
 }
 
@@ -19,7 +20,7 @@ repositories {
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'org.gretty'
 
 dependencies {
     compile "javax.servlet:javax.servlet-api:${project.property('servlet.version')}"

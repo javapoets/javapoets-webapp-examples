@@ -1,0 +1,13 @@
+plugins {
+     id 'java'
+     id 'war'
+     id 'org.gretty' version '3.0.2'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.gretty:gretty:3.0.2'
+}

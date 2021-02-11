@@ -2,7 +2,7 @@
 <Configuration>
 
   <Properties>
-    <Property name="LOG_DIR">/var/log/web/</Property>
+    <Property name="LOG_DIR">./build/log</Property>
   </Properties>
 
   <Appenders>

@@ -1,7 +1,7 @@
-Basic Java Web Application with Log4j
-=====================================
+Basic Java Web Application with Gradle, Gretty & Log4j
+========================================================
 
-## Gradle Config
+## Gradle Config ([build.gradle](build.gradle))
 
 ```groovy
 buildscript {
@@ -22,9 +22,9 @@ apply plugin: 'war'
 apply plugin: 'org.gretty'
 
 dependencies {
-    implementation 'org.gretty:gretty:3.0.2'
-    implementation "org.apache.logging.log4j:log4j-core:${ project.property('log4j.version') }"
-    implementation "org.apache.logging.log4j:log4j-api:${ project.property('log4j.version') }"
+    compile "javax.servlet:javax.servlet-api:${project.property('servlet.version')}"
+    compile "org.apache.logging.log4j:log4j-core:${project.property('log4j.version')}"
+    compile "org.apache.logging.log4j:log4j-api:${project.property('log4j.version')}"
 }
 
 gretty {
@@ -33,9 +33,9 @@ gretty {
 }
 ```
 
-## File: gradle.properties
+## Dynamic build properties: ([gradle.properties](gradle.properties))
 
-```properties
+```
 servlet.version=4.0.0
 log4j.version=2.11.1
 jetty.version=9.4.7.v20170914
@@ -49,9 +49,8 @@ For development: `localhost:8080`
 $ gradle clean build appRun
 ```
 
-### To run the application:
+### Run the application (using Gretty)
 
-Run using Gretty
 ```bash
 $ gradle appRun
 ```

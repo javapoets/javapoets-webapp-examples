@@ -1,7 +1,7 @@
-Basic Java Web Application with Gradle, Gretty
+Basic Java Web Application with Gradle & Gretty
 ==============================================
 
-## Gradle Config [build.gradle](build.gradle)
+## Gradle Config ([build.gradle](build.gradle))
 
 ```groovy
 buildscript {

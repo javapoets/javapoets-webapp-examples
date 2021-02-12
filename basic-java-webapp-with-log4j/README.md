@@ -4,15 +4,22 @@ Basic Java Web Application with Log4j
 ## Gradle Config
 
 ```groovy
-plugins {
-     id 'java'
-     id 'war'
-     id 'org.gretty' version '3.0.2'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.gretty:gretty:+'
+    }
 }
 
 repositories {
-     jcenter()
+    jcenter()
 }
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.gretty'
 
 dependencies {
     implementation 'org.gretty:gretty:3.0.2'
@@ -28,15 +35,23 @@ gretty {
 
 ## File: gradle.properties
 
-```
+```properties
 servlet.version=4.0.0
 log4j.version=2.11.1
 jetty.version=9.4.7.v20170914
 jetty94Version=9.4.7.v20170914
 ```
 
-## Build Instructions
+## Build (and run) Instructions
 
+For development: `localhost:8080`
 ```bash
 $ gradle clean build appRun
+```
+
+### To run the application:
+
+Run using Gretty
+```bash
+$ gradle appRun
 ```

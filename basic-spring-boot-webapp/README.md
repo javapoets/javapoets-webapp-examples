@@ -25,3 +25,9 @@ dependencies {
 $ gradle build bootRun
 ```
 The application runs at <http://localhost:8080/>
+
+### Run the application (using Spring Boot)
+
+```bash
+$ gradle bootRun
+```

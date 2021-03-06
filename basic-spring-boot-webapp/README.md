@@ -19,7 +19,7 @@ dependencies {
 }
 ```
 
-## Build (ad run) Instructions
+## Build (and run) Instructions
 
 For development: `localhost:8080`. Application runs at <http://localhost:8080/>
 

@@ -3,6 +3,7 @@
 
   <Properties>
     <Property name="LOG_DIR">./build/log</Property>
+    <Property name="LOG_LEVEL">trace</Property>
   </Properties>
 
   <Appenders>
@@ -17,7 +18,8 @@
       filePattern="${LOG_DIR}/localhost-8080.%i.log.gz"
       ignoreExceptions="false">
       <PatternLayout>
-        <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p:%L %m%n</Pattern>
+        <!--Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p:%L %m%n</Pattern-->
+        <Pattern>%d %-5p [%t] %C{2}:%L - %m%n</Pattern>
       </PatternLayout>
       <Policies>
         <SizeBasedTriggeringPolicy size="10MB" />
@@ -28,10 +30,10 @@
   </Appenders>
 
   <Loggers>
-    <Logger name="javapoets." level="trace">
+    <Logger name="javapoets." level="${LOG_LEVEL}">
       <AppenderRef ref="rollingFile" />
     </Logger>
-    <Root level="debug">
+    <Root level="${LOG_LEVEL}">
       <AppenderRef ref="STDOUT" />
     </Root>
   </Loggers>

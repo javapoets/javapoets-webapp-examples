@@ -1,7 +1,7 @@
 Basic (Hello World) Spring Boot Web Application
 ===============================================
 
-## Gradle Config
+## Gradle Config ([build.gradle](build.gradle))
 
 ```groovy
 plugins {
@@ -19,12 +19,13 @@ dependencies {
 }
 ```
 
-## Build Instructions
+## Build (ad run) Instructions
+
+For development: `localhost:8080`. Application runs at <http://localhost:8080/>
 
 ```bash
 $ gradle build bootRun
 ```
-The application runs at <http://localhost:8080/>
 
 ### Run the application (using Spring Boot)
 

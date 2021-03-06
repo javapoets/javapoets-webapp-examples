@@ -35,7 +35,7 @@ gretty {
 
 ## Dynamic build properties: ([gradle.properties](gradle.properties))
 
-```
+```properties
 servlet.version=4.0.0
 log4j.version=2.11.1
 jetty.version=9.4.7.v20170914
@@ -44,7 +44,7 @@ jetty94Version=9.4.7.v20170914
 
 ## Build (and run) Instructions
 
-For development: `localhost:8080`
+For development: `localhost:8080`. Application runs at <http://localhost:8080/>
 ```bash
 $ gradle clean build appRun
 ```
